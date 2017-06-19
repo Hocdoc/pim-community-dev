@@ -139,7 +139,7 @@ class AttributeSearchableRepository implements SearchableRepositoryInterface
             }
         }
 
-        //TODO: this part is specific to attributes
+        //TODO: this part  specific to attributes
         if ($options['exclude_unique']) {
             $qb->andWhere('a.unique = 0');
         }
@@ -155,7 +155,6 @@ class AttributeSearchableRepository implements SearchableRepositoryInterface
             $qb->setParameter('groups', $options['attribute_groups']);
         }
 
-        $qb->orderBy('ag.code');
         $qb->orderBy('ag.sortOrder');
 
         $qb->groupBy('a.id');
